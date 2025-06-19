@@ -1,6 +1,8 @@
+/* eslint-disable no-unused-vars */
+// /*eslint no-unused-vars: "error"*/
+/*global some_unused_var*/
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
 
 function App() {
@@ -8,26 +10,17 @@ function App() {
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+      <div className="flex flex-col items-center bg-gray-800 p-6 rounded-lg shadow-lg m-4">
+        <h1 className="text-3xl font-bold text-white mb-4">Counting the variable</h1>
+        <p className="text-xl text-gray-300 mb-4">Count: {count}</p>
+        <button 
+          onClick={() => setCount(count + 1)}
+          className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md transition duration-300"
+        >
+          Increment
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+        <button className = "bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md transition duration-300" onClick={() => setCount(0)}>reset</button>
+      </div>  
     </>
   )
 }
